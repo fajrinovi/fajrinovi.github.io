@@ -613,9 +613,9 @@ b, strong {
   object-fit: cover;  
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   position: relative; /* Posisi relatif terhadap parent-nya */
-  left: 10%; 
+  left: 5%; 
   margin-top: -10%;
-  transform: translateX(10%);
+  transform: translateX(5%);
 }
 
 /* Style untuk overlay yang akan muncul saat hover */
@@ -868,27 +868,46 @@ b, strong {
 /* Style the modal content (image) */
 .modal-content {
   background-color: #fefefe;
-  margin: 1% auto; /* Adjust top margin to display the modal more towards the center of the screen */
-  padding: 0; /* No padding needed for iframe */
+  margin: 1% auto; 
+  padding: 0; 
   border: 1px solid #888;
-  width: 40%; /* Adjust width as necessary */
-  height: 90%; /* Adjust height as necessary */
+  width: 40%;
+  max-width: 500px;
+  height: auto;
+  max-height: 90%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 1px; /* Optional: if you want rounded corners */
+  border-radius: 1px; 
+  overflow-y: auto;
+}
+
+/* Media queries untuk layar yang lebih kecil */
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    width: 95%; /* Lebar modal lebih besar untuk layar yang lebih kecil */
+    margin: 5% auto; /* Meningkatkan margin untuk mendorong modal sedikit lebih ke atas */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .modal-content {
+    width: 95%; /* Lebar modal lebih besar untuk layar yang sangat kecil */
+    margin-top: 10%; /* Margin atas yang lebih besar untuk layar yang sangat kecil */
+    height: auto; /* Tinggi otomatis untuk layar yang sangat kecil */
+  }
 }
 
 .modal-content-canva {
   background-color: #fefefe;
-  margin: 1% auto; /* Adjust top margin to display the modal more towards the center of the screen */
-  padding: 0; /* No padding needed for iframe */
+  margin: 1% auto; 
+  padding: 0; 
   border: 1px solid #888;
-  width: 70%; /* Adjust width as necessary */
-  height: 95%; /* Adjust height as necessary */
+  width: 70%; 
+  height: 95%; 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 1px; /* Optional: if you want rounded corners */
+  border-radius: 1px; 
 }
 
 .modal-content iframe {
-  width: 100%; /* Take up all available width of the modal content */
-  height: 100%; /* Take up all available height of the modal content */
+  width: 100%; 
+  height: 100%; 
 }
